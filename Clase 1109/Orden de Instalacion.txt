@@ -8,8 +8,9 @@
 5. Expo App
 
 Pasos para crear entorno Expo
-
+Crear cuenta expo https://expo.dev/
 1. Copiar cmd.exe y agregar en Folder Documentos/Expo si no existiera crearla.
 2. Comando para crear proyecto: npx create-expo-app nombreproy --template (escribir desde Expo Folder para crear nuevo proy)
 3. Seleccionar Blank Template.
 4. Select Latest Expo SDK.
+
