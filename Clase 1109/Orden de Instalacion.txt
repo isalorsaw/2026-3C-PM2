@@ -1,0 +1,15 @@
+1. JDK Java
+2. Xampp. (PHP y MYSQL)
+3. HeidiSQL. (Portable)
+4. NodeJS
+5. VSCode. 
+6. Plugins.
+6. Android Studio
+5. Expo App
+
+Pasos para crear entorno Expo
+
+1. Copiar cmd.exe y agregar en Folder Documentos/Expo si no existiera crearla.
+2. Comando para crear proyecto: npx create-expo-app nombreproy --template (escribir desde Expo Folder para crear nuevo proy)
+3. Seleccionar Blank Template.
+4. Select Latest Expo SDK.
