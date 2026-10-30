@@ -1,0 +1,14 @@
+CREATE TABLE `tbl_modulo_app` (
+	`modulo_codigo` VARCHAR(50) NOT NULL COLLATE 'utf8_unicode_ci',
+	`modulo_nombre` VARCHAR(50) NULL DEFAULT NULL COLLATE 'utf8_unicode_ci',
+	`modulo_descrip` VARCHAR(250) NULL DEFAULT NULL COLLATE 'utf8_unicode_ci',
+	`modulo_tipo` VARCHAR(50) NULL DEFAULT NULL COLLATE 'utf8_unicode_ci',
+	`modulo_screen` VARCHAR(50) NULL DEFAULT NULL COLLATE 'utf8_unicode_ci',
+	`modulo_icon` VARCHAR(50) NULL DEFAULT NULL COLLATE 'utf8_unicode_ci',
+	`modulo_estado` VARCHAR(50) NULL DEFAULT 'ACTIVO' COLLATE 'utf8_unicode_ci',
+	PRIMARY KEY (`modulo_codigo`) USING BTREE
+)
+COLLATE='utf8_unicode_ci'
+ENGINE=InnoDB
+ROW_FORMAT=DYNAMIC
+;
