@@ -1,0 +1,12 @@
+if (data && data.exito) {
+  showAlert('¡Bienvenido!', data.mensaje);
+  
+  await AsyncStorage.setItem('user_id', JSON.stringify(data.usuario.id));
+  await AsyncStorage.setItem('user_session', JSON.stringify(data.usuario));
+  await AsyncStorage.setItem('user_owner', JSON.stringify(data.usuario.nombre_completo));
+
+  // 📱 REGISTRAR O ACTUALIZAR DISPOSITIVO EN LA BD (en segundo plano)
+  registrarDispositivoEnBD(data.usuario.id);
+
+  navigation.replace('Home');
+}

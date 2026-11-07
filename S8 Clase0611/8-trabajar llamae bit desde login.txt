@@ -1,0 +1,41 @@
+//Importar el util donde se necesite
+import { registrarBitacora } from '../utils/bitacora';
+
+
+
+
+//Al tener exito al loguearse
+if (data && data.exito) {
+  showAlert('¡Bienvenido!', data.mensaje);
+  
+  await AsyncStorage.setItem('user_id', JSON.stringify(data.usuario.id));
+
+  // 📝 REGISTRAR BITÁCORA DE LOGIN EXITOSO
+  registrarBitacora({
+    accion: 'LOGIN',
+    tablaAfectada: 'tbl_usuario',
+    registroId: data.usuario.id,
+    datosNuevos: { usuario: data.usuario.usuario, modulo: 'APP_MOVIL' },
+    estado: 'EXITOSO',
+    usuarioId: data.usuario.id,
+  });
+
+  navigation.replace('Home');
+}
+
+
+//Al fallar al ingresar
+else {
+  const mensajeError = data.mensaje || 'Usuario o contraseña incorrectos.';
+
+  // 📝 REGISTRAR BITÁCORA DE LOGIN FALLIDO
+  registrarBitacora({
+    accion: 'LOGIN_ATTEMPT_FAILED',
+    tablaAfectada: 'tbl_usuario',
+    datosNuevos: { usuario_ingresado: usuario },
+    estado: 'FALLIDO',
+  });
+
+  setErrorMsg(mensajeError);
+  showAlert('Error de acceso', mensajeError);
+}

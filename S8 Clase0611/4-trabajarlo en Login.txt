@@ -1,0 +1,24 @@
+// Agrega la importación en la parte superior
+import { getDispositivoInfo } from '../utils/deviceInfo';
+
+// Nueva función para enviar los datos al servidor
+const registrarDispositivoEnBD = async (usuarioId) => {
+  try {
+    const dispoInfo = await getDispositivoInfo();
+    if (!dispoInfo) return;
+
+    await fetch(API_DISPOSAVE, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+      },
+      body: JSON.stringify({
+        ...dispoInfo,
+        usuario_id: usuarioId,
+      }),
+    });
+  } catch (error) {
+    console.log('Error registrando dispositivo en background:', error.message);
+  }
+};
