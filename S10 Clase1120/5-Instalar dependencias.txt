@@ -1,1 +1,2 @@
 npm install react-native-image-picker
+npm install expo-image-picker
